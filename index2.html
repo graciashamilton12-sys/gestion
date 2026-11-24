@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consultez et gérez l'annuaire des étudiants.">
+    <title>Annuaire des étudiants</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">Campus</a>
+        <nav aria-label="Navigation principale">
+            <a class="nav-link" href="index.html">Ajouter un étudiant</a>
+            <a class="nav-link active" href="index2.html">Annuaire</a>
+        </nav>
+    </header>
+
+    <main class="page-shell">
+        <section class="intro">
+            <p class="eyebrow">VOTRE ÉTABLISSEMENT</p>
+            <h1>Annuaire des étudiants</h1>
+             <p>Retrouvez, modifiez ou supprimez les dossiers enregistrés.</p>
+        </section>
+
+        <section class="panel directory-panel" aria-labelledby="directory-title">
+            <div class="directory-heading">
+                <div>
+                    <p class="eyebrow">DOSSIERS</p>
+                    <h2 id="directory-title">Liste des étudiants <span id="student-count" class="count-badge">0</span></h2>
+                </div>
+                <a class="button button-primary" href="index.html">+ Ajouter</a>
+            </div>
+
+            <label class="search-box">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+                <span class="visually-hidden">Rechercher un étudiant</span>
+                <input id="search-input" type="search" placeholder="Rechercher par nom, filière ou niveau…">
+            </label>
+
+            <p id="directory-message" class="status-message" role="status" aria-live="polite"></p>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Étudiant</th>
+                            <th scope="col">Niveau</th>
+                            <th scope="col">Filière</th>
+                            <th scope="col"><span class="visually-hidden">Actions</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-list"></tbody>
+                </table>
+                <div id="empty-state" class="empty-state" hidden>
+                    <span class="empty-icon" aria-hidden="true">＋</span>
+                    <h3>Aucun étudiant pour le moment</h3>
+                    <p>Ajoutez un premier dossier pour commencer votre annuaire.</p>
+                    <a class="button button-primary" href="index.html">Ajouter un étudiant</a>
+                </div>
+            </div>
+        </section>
+
+        <p class="storage-note"><span aria-hidden="true">●</span> Vos données sont enregistrées dans ce navigateur.</p>
+    </main>
+</body>
+</html>

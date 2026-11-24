@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ajoutez et gérez les dossiers des étudiants.">
+    <title>Gestion des étudiants</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">INSTITUT</a>
+        <nav aria-label="Navigation principale">
+            <a class="nav-link active" href="index.html">Ajouter un étudiant</a>
+            <a class="nav-link" href="index2.html">Annuaire</a>
+        </nav>
+    </header>
+
+    <main class="page-shell">
+        <section class="intro">
+            <p class="eyebrow">ESPACE ADMINISTRATION</p>
+            <h1 id="form-title">Enregistrer un étudiant</h1>
+            <p>Centralisez les informations et gérez facilement les dossiers de votre établissement.</p>
+        </section>
+
+        <section class="panel form-panel" aria-labelledby="form-title">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">DOSSIER ÉTUDIANT</p>
+                    <h2>Informations personnelles</h2>
+                </div>
+                <span class="step-badge">01</span>
+            </div>
+
+            <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+
+            <form id="student-form">
+                <div class="form-grid">
+                    <label>
+                        Nom
+                        <input id="nom" name="nom" type="text" placeholder="Ex. Koffi" autocomplete="family-name" required>
+                    </label>
+                    <label>
+                        Prénom
+                        <input id="prenom" name="prenom" type="text" placeholder="Ex. Amina" autocomplete="given-name" required>
+                    </label>
+                    <label>
+                        Niveau d'étude
+                        <input id="niveau" name="niveau" type="text" placeholder="Ex. Licence 2" required>
+                    </label>
+                    <label>
+                        Filière
+                        <input id="filiere" name="filiere" type="text" placeholder="Ex. Informatique" required>
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button class="button button-primary" id="submit-button" type="submit">Enregistrer l'étudiant</button>
+                    <a class="text-link" href="index2.html">Consulter l'annuaire <span aria-hidden="true">→</span></a>
+                </div>
+            </form>
+        </section>
+
+        <p class="storage-note"><span aria-hidden="true">●</span> Vos données sont enregistrées dans ce navigateur.</p>
+    </main>
+</body>
+</html>

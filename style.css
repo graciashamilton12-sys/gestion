@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --ink: #172b4d; --muted: #72809a; --line: #e8edf4;
+  --primary: #4467e8; --primary-dark: #3455d1;
+  --background: #f5f7fb; --white: #fff;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px; margin: 0;
+  background: var(--background); color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { font-family: "Manrope", sans-serif; }
+
+.site-header {
+  height: 76px; padding: 0 max(6vw, calc((100vw - 1120px) / 2));
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--white); border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  color: var(--ink); font: 800 24px "Manrope", sans-serif;
+  letter-spacing: -1.2px; text-decoration: none;
+}
+.brand span { color: var(--primary); }
+
+nav { height: 100%; display: flex; gap: 30px; }
+
+.nav-link {
+  position: relative; display: inline-flex; align-items: center;
+  color: var(--muted); font-size: 14px; font-weight: 600;
+  text-decoration: none;
+}
+.nav-link:hover, .nav-link.active { color: var(--primary); }
+
+.nav-link.active::after {
+  content: ""; position: absolute; right: 0; bottom: 0; left: 0;
+  height: 3px; border-radius: 3px 3px 0 0; background: var(--primary);
+}
+
+.page-shell { width: min(100% - 40px, 920px); margin: 62px auto; }
+.intro { margin-bottom: 30px; }
+
+.eyebrow {
+  margin: 0 0 10px; color: var(--primary);
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+}
+
+h1 {
+  margin-bottom: 9px; font-size: clamp(29px, 4vw, 37px);
+  letter-spacing: -1.4px;
+}
+
+.intro > p:last-child { margin-bottom: 0; color: var(--muted); font-size: 15px; }
+
+.panel {
+  padding: 32px; border: 1px solid var(--line); border-radius: 14px;
+  background: var(--white); box-shadow: 0 8px 26px rgb(23 43 77 / 4%);
+}
+
+.panel-heading, .directory-heading {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.panel-heading { margin-bottom: 28px; }
+
+.panel-heading h2, .directory-heading h2 {
+  margin-bottom: 0; font-size: 20px; letter-spacing: -0.5px;
+}
+
+.step-badge, .count-badge {
+  display: inline-grid; flex: 0 0 auto; place-items: center;
+  border-radius: 50%; background: #eef1ff; color: var(--primary);
+  font-size: 12px; font-weight: 700;
+}
+.step-badge { width: 38px; height: 38px; }
+.count-badge { width: 27px; height: 27px; margin-left: 5px; vertical-align: 2px; }
+
+.form-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 20px;
+}
+
+label {
+  display: grid; gap: 9px; color: #33435f;
+  font-size: 13px; font-weight: 600;
+}
+
+input {
+  width: 100%; min-height: 47px; padding: 0 14px;
+  border: 1px solid #dfe5ef; border-radius: 7px; outline: none;
+  background: var(--white); color: var(--ink);
+  font: 400 14px "DM Sans", sans-serif;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+input::placeholder { color: #a4aec0; }
+input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgb(68 103 232 / 12%); }
+
+.form-actions {
+  display: flex; align-items: center; gap: 24px; margin-top: 29px;
+}
+
+.button, .action-link, .action-button {
+  border: 0; border-radius: 7px; cursor: pointer;
+  font: 600 13px "DM Sans", sans-serif; text-decoration: none;
+}
+
+.button {
+  min-height: 43px; padding: 0 17px;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: background 0.15s, transform 0.15s;
+}
+.button:hover { transform: translateY(-1px); }
+.button-primary { background: var(--primary); color: var(--white); }
+.button-primary:hover { background: var(--primary-dark); }
+
+.text-link {
+  color: var(--primary); font-size: 13px; font-weight: 600;
+  text-decoration: none;
+}
+.text-link:hover { text-decoration: underline; }
+
+.storage-note {
+  margin: 20px 0 0; color: var(--muted);
+  font-size: 12px; text-align: center;
+}
+.storage-note span { margin-right: 5px; color: #43b581; font-size: 9px; }
+
+.directory-heading { margin-bottom: 23px; }
+.directory-heading .eyebrow { margin-bottom: 8px; }
+.search-box { position: relative; display: block; margin-bottom: 22px; }
+.search-box input { padding-left: 42px; background: #fbfcfe; }
+
+.search-icon {
+  position: absolute; z-index: 1; top: 8px; left: 14px;
+  color: #8793a8; font-size: 25px; line-height: 1;
+}
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+thead { background: #f8f9fc; }
+
+th {
+  padding: 13px 15px; color: #77849b; font-size: 11px;
+  font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+}
+
+td {
+  padding: 16px 15px; border-bottom: 1px solid var(--line);
+  color: #52617a; font-size: 13px;
+}
+tbody tr:last-child td { border-bottom: 0; }
+.student-name { color: var(--ink); font-weight: 600; }
+
+.row-actions {
+  display: flex; justify-content: flex-end; gap: 8px; white-space: nowrap;
+}
+
+.action-link, .action-button {
+  padding: 5px 8px; border-radius: 5px; background: transparent;
+  color: var(--primary); font-size: 12px;
+}
+.action-link:hover, .action-button:hover { background: #eef1ff; }
+.action-button { color: #c44e5a; }
+.action-button:hover { background: #fff0f1; }
+
+.status-message { margin: 0 0 16px; color: #b3414b; font-size: 13px; }
+.status-message:empty, [hidden] { display: none !important; }
+.empty-state { padding: 42px 15px 20px; text-align: center; }
+
+.empty-icon {
+  width: 42px; height: 42px; margin: 0 auto 15px;
+  display: grid; place-items: center; border-radius: 12px;
+  background: #eef1ff; color: var(--primary); font-size: 25px;
+}
+
+.empty-state h3 { margin-bottom: 7px; font-size: 17px; }
+.empty-state p { margin-bottom: 18px; color: var(--muted); font-size: 13px; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%);
+}
+
+@media (max-width: 600px) {
+  .site-header { height: 66px; padding: 0 20px; }
+  nav { gap: 15px; }
+  .nav-link { font-size: 12px; }
+  .page-shell { width: min(100% - 28px, 920px); margin: 38px auto; }
+  .panel { padding: 23px 18px; }
+  .form-grid { grid-template-columns: 1fr; gap: 17px; }
+  .form-actions { align-items: flex-start; flex-direction: column; gap: 16px; }
+  .directory-heading { align-items: flex-start; }
+  .directory-heading .button { padding: 0 12px; }
+  table { min-width: 570px; }
+}
